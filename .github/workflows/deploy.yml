@@ -17,8 +17,8 @@ steps:
 with:
 node-version: 20	
 - run: npm ci
-	- run: npm run build	
-	- uses: withastro/action@v3
+- run: npm run build	
+- uses: withastro/action@v3
 with:
 path: dist
 package-manager: npm
