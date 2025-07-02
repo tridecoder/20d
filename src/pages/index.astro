@@ -1,16 +1,72 @@
 ---
-
+// src/pages/index.astro
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+	<meta charset="UTF-8" />
+	<title>Prepárate | 20D</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script>
+	  document.addEventListener("DOMContentLoaded", () => {
+		const countdown = document.getElementById("countdown");
+		const weddingDate = new Date("2025-12-20T12:45:00+01:00").getTime();
+
+		const updateCountdown = () => {
+		  const now = new Date().getTime();
+		  const distance = weddingDate - now;
+
+		  if (distance < 0) {
+			countdown.innerText = "¡Ya ha llegado el gran día!";
+			return;
+		  }
+
+		  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  countdown.innerText = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+		};
+
+		setInterval(updateCountdown, 1000);
+		updateCountdown();
+	  });
+	</script>
+	<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+	<section class="hero">
+	  <video autoplay muted loop playsinline class="background-video base">
+		<source src="/20d/matadero1.mp4" type="video/mp4" />
+	  </video>
+	  
+	  <video autoplay muted loop playsinline class="background-video fx">
+		<source src="/20d/matadero1.mp4" type="video/mp4" />
+	  </video>
+
+	  <div class="overlay">
+		<!-- <div class="efecto">
+			<h1>PREPÁRATE</h1>
+		</div>
+		<p>20 de diciembre de 2025 – Madrid</p>
+		Faltan <div id="countdown" class="countdown">Cargando...</div> -->
+		
+		<div class="animated-title">
+		  <div class="text-top">
+			<div>
+			  <span>PREPÁRATE</span>
+			  <span>20 de diciembre de 2025 – Madrid</span>
+			</div>
+		  </div>
+		  <div class="text-bottom">
+			<div id="countdown" class="countdown">Cargando...</div>
+		  </div>
+		</div>
+		
+	  </div>
+	</section>
+  </body>
 </html>
