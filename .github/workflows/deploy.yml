@@ -3,7 +3,7 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches:
-    - main
+      - main
   workflow_dispatch:
 
 permissions:
@@ -13,18 +13,18 @@ permissions:
 
 jobs:
   deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    - run: npm ci
-    - run: npm run build
+      - run: npm ci
+      - run: npm run build
 
-    - uses: withastro/action@v3
-    with:
-      path: dist
-      package-manager: npm
+      - uses: withastro/action@v3
+        with:
+          path: dist
+          package-manager: npm
