@@ -4,6 +4,6 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  site: "https://tridecoder.github.io/20d/",
+  site: "https://20d.es",
   base: "/20d/",
 });
