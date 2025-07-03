@@ -170,7 +170,7 @@ h1 {
 /* Estilos para las nuevas secciones de contenido */
 .content-section {
   padding: 5rem 2rem;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
   text-align: center;
   color: #333;
@@ -182,66 +182,51 @@ h1 {
 }
 
 .content-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  font-family: "Cormorant Garamond", serif; /* Sugerencia de una fuente elegante */
+  font-family: "Lato", serif; /* Sugerencia de una fuente elegante */
   font-weight: 500;
 }
 
 .content-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  font-family: "Lato", sans-serif; /* Sugerencia de una fuente legible */
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-family: "Lato", sans-serif;
+  text-justify: initial;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
 }
 
-.navigation {
+/* Imagen chorra*/
+.imagen-entrada {
   position: relative;
-  z-index: 10000;
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  transition: all 0.3s ease;
 }
 
-.navigation.sticky {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  animation: fadeIn 0.8s ease-out;
-  padding: 1rem;
+.animada-esquina {
+  opacity: 0;
+  transform: translate(-30%, -30%) rotate(-10deg);
+  transition: all 2s ease-out;
+  max-width: 400px;
+  width: 90%;
+  margin: 2rem auto;
 }
 
-.navigation ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.animada-esquina.visible {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 
-.navigation a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: transform 0.2s ease, color 0.2s ease;
+.img-glass {
+  display: block;
+  max-width: 100%;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
 }
 
-.navigation a:hover {
-  color: #ff99cc;
-  transform: scale(1.05);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.img-glass:hover {
+  transform: scale(1.02);
 }
