@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: withastro/action@v2
+        uses: withastro/action@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-dir: dist
+          site: ./dist
+          package-manager: npm
