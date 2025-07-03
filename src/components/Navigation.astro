@@ -1,0 +1,45 @@
+---
+// src/components/Navigation.astro
+
+// Definimos las secciones que aparecerán en el menú
+const navLinks = [
+  { href: "#inicio", text: "Inicio" },
+  { href: "#dqve", text: "Esto qué es" },
+  { href: "#evento", text: "El Evento" },
+  { href: "#alojamiento", text: "Alojamiento" },
+  { href: "#regalos", text: "Regalos" },
+  { href: "#rsvp", text: "RSVP" },
+];
+---
+
+<nav id="menu" class="navigation">
+  <ul>
+	{navLinks.map(link => (
+	  <li>
+		<a href={link.href}>{link.text}</a>
+	  </li>
+	))}
+  </ul>
+</nav>
+
+<script>
+  const menu = document.getElementById("menu");
+  const trigger = document.querySelector(".animated-title");
+
+  if (menu && trigger) {
+	const observer = new IntersectionObserver(
+	  ([entry]) => menu.classList.toggle("sticky", !entry.isIntersecting),
+	  { threshold: 0, rootMargin: "-100px 0px 0px 0px" }
+	);
+	observer.observe(trigger);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener("click", function (e) {
+	  e.preventDefault();
+	  document.querySelector(this.getAttribute("href")).scrollIntoView({
+		behavior: "smooth"
+	  });
+	});
+  });
+</script>

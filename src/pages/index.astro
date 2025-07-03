@@ -1,178 +1,224 @@
 ---
 // src/pages/index.astro
+import Navigation from '../components/Navigation.astro';
 import "../styles/global.css";
 ---
 
 <html lang="es">
-  <head>
+<head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="noindex, nofollow">
 	<title>20 de diciembre de 2025 — ¡Prepárate!</title>
-  </head>
-  <body>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
 	<div id="auth-wrapper">
-	  <div id="password-gate" class="password-overlay" style="display: none;">
-		<form class="password-form" id="loginForm">
-		  <h2>Introduce la contraseña</h2>
-		  <input type="password" placeholder="contraseña" id="passwordInput" />
-		  <button type="submit">Entrar</button>
-		  <p id="error-message" class="error-message"></p>
-		</form>
-	  </div>
-
-	  <section class="hero" style="display: none;">
-		<video autoplay muted loop playsinline class="background-video base">
-		  <source src="/matadero1.mp4" type="video/mp4" />
-		</video>
-
-		<video autoplay muted loop playsinline class="background-video fx">
-		  <source src="/matadero1.mp4" type="video/mp4" />
-		</video>
-
-		<div class="overlay">
-		  <div class="animated-title">
-			<div class="text-top">
-			  <div>
-				<span>PREPÁRATE</span>
-				<span>20 de diciembre de 2025 – Madrid</span>
-			  </div>
-			</div>
-			<div class="text-bottom">
-			   <div id="countdown" class="countdown">Cargando...</div>
-			</div>
-		  </div>
+		<div id="password-gate" class="password-overlay" style="display: none;">
+			<form class="password-form" id="loginForm">
+				<h2>Introduce la contraseña</h2>
+				<input type="password" placeholder="contraseña" id="passwordInput" />
+				<button type="submit">Entrar</button>
+				<p id="error-message" class="error-message"></p>
+			</form>
 		</div>
-	  </section>
+
+		<!-- Envolvemos todo el contenido principal en un <main> para mostrarlo/ocultarlo fácilmente -->
+		<main id="main-content" style="display: none;">
+			<section id="inicio" class="hero">
+				<video autoplay muted loop playsinline class="background-video base">
+					<source src="/matadero1.mp4" type="video/mp4" />
+				</video>
+
+				<video autoplay muted loop playsinline class="background-video fx">
+					<source src="/matadero1.mp4" type="video/mp4" />
+				</video>
+
+				<div class="overlay">
+					<div class="animated-title">
+						<div class="text-top">
+							<div>
+								<span>PREPÁRATE</span>
+								<span>20 de diciembre de 2025 – Madrid</span>
+							</div>
+						</div>
+						<div class="text-bottom">
+							<div id="countdown" class="countdown">Cargando...</div>
+						</div>
+						<!-- El componente de navegación ahora está aquí -->
+						
+					</div>
+				</div>
+				
+				<Navigation />
+					
+			</section>
+
+			<!-- NUEVAS SECCIONES DE LA PÁGINA -->
+			<section id="dqve" class="content-section">
+				<h2>¿Pero esto qué es?</h2>
+				<p>Aquí podéis contar cómo os conocisteis, vuestros momentos más especiales y la historia que os ha llevado hasta aquí. ¡Sed creativos!</p>
+			</section>
+
+			<section id="evento" class="content-section alternate">
+				<h2>El Evento</h2>
+				<p>Detalles sobre la ceremonia y la celebración. Dirección, horarios, código de vestimenta, etc. Todo lo que vuestros invitados necesitan saber para no perderse nada.</p>
+			</section>
+
+			<section id="alojamiento" class="content-section">
+				<h2>Alojamiento y Viaje</h2>
+				<p>Recomendaciones de hoteles, apartamentos o información útil sobre cómo llegar para los invitados que vienen de fuera. Facilitarles el viaje es un gran detalle.</p>
+			</section>
+
+			<section id="regalos" class="content-section alternate">
+				<h2>Lista de Bodas</h2>
+				<p>Si tenéis lista de bodas, este es el lugar para poner el enlace o la información. También podéis poner un número de cuenta o simplemente decir que el mejor regalo es su compañía.</p>
+			</section>
+
+			<section id="rsvp" class="content-section">
+				<h2>RSVP</h2>
+				<p>Aquí podéis poner un formulario de confirmación de asistencia (usando un servicio como Google Forms) o un número de teléfono/email para que los invitados confirmen.</p>
+			</section>
+		</main>
 	</div>
 
 	<script type="module">
-	  const HASH = "a712badfa7d1ad21dfd0ee8cf5499f9981e653429cd3e2f0a3a33e291096ad1b";
-	  const KEY = "wedding-auth";
-	  const loginForm = document.getElementById("loginForm");
-	  const passwordInput = document.getElementById("passwordInput");
-	  const gate = document.getElementById("password-gate");
-	  const hero = document.querySelector(".hero");
-	  const errorMessage = document.getElementById("error-message");
+		const HASH = "a712badfa7d1ad21dfd0ee8cf5499f9981e653429cd3e2f0a3a33e291096ad1b";
+		const KEY = "wedding-auth";
+		const loginForm = document.getElementById("loginForm");
+		const passwordInput = document.getElementById("passwordInput");
+		const gate = document.getElementById("password-gate");
+		// Modificamos para apuntar al contenedor principal
+		const mainContent = document.getElementById("main-content");
+		const errorMessage = document.getElementById("error-message");
 
-	  const encoder = new TextEncoder();
+		const encoder = new TextEncoder();
 
-	  async function hashPassword(pwd) {
-		const data = encoder.encode(pwd);
-		const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-		const hashArray = Array.from(new Uint8Array(hashBuffer));
-		return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-	  }
-
-	  async function checkAccess() {
-		const stored = localStorage.getItem(KEY);
-		if (stored === HASH) {
-		  hero.style.display = "block";
-		} else {
-		  gate.style.display = "grid";
-		}
-	  }
-
-	  loginForm.addEventListener("submit", async (e) => {
-		e.preventDefault();
-		const input = passwordInput.value.trim();
-		const inputHash = await hashPassword(input);
-		if (inputHash === HASH) {
-		  localStorage.setItem(KEY, HASH);
-		  location.reload();
-		} else {
-		  errorMessage.textContent = "Contraseña incorrecta";
-		  loginForm.classList.add("shake");
-		  setTimeout(() => loginForm.classList.remove("shake"), 600);
-		}
-	  });
-
-	  checkAccess();
-
-	  // Cuenta atrás
-	  const targetDate = new Date("2025-12-20T12:45:00");
-	  const countdownEl = document.getElementById("countdown");
-
-	  function updateCountdown() {
-		const now = new Date();
-		const diff = targetDate - now;
-		if (diff <= 0) {
-		  countdownEl.innerText = "¡Ya es el día!";
-		  return;
+		async function hashPassword(pwd) {
+			const data = encoder.encode(pwd);
+			const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+			const hashArray = Array.from(new Uint8Array(hashBuffer));
+			return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 		}
 
-		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-		const minutes = Math.floor((diff / (1000 * 60)) % 60);
-		const seconds = Math.floor((diff / 1000) % 60);
+		async function checkAccess() {
+			const stored = localStorage.getItem(KEY);
+			if (stored === HASH) {
+				// Mostramos todo el contenido principal
+				mainContent.style.display = "block";
+			} else {
+				gate.style.display = "grid";
+			}
+		}
 
-		countdownEl.innerText = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
-	  }
+		loginForm.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const input = passwordInput.value.trim();
+			const inputHash = await hashPassword(input);
+			if (inputHash === HASH) {
+				localStorage.setItem(KEY, HASH);
+				location.reload();
+			} else {
+				errorMessage.textContent = "Contraseña incorrecta";
+				loginForm.classList.add("shake");
+				setTimeout(() => loginForm.classList.remove("shake"), 600);
+			}
+		});
 
-	  setInterval(updateCountdown, 1000);
-	  updateCountdown();
+		checkAccess();
+
+		// Cuenta atrás (sin cambios)
+		const targetDate = new Date("2025-12-20T12:45:00");
+		const countdownEl = document.getElementById("countdown");
+
+		function updateCountdown() {
+			const now = new Date();
+			const diff = targetDate - now;
+			if (diff <= 0) {
+				countdownEl.innerText = "¡Ya es el día!";
+				return;
+			}
+
+			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+			const minutes = Math.floor((diff / (1000 * 60)) % 60);
+			const seconds = Math.floor((diff / 1000) % 60);
+
+			countdownEl.innerText = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+		}
+
+		setInterval(updateCountdown, 1000);
+		updateCountdown();
 	</script>
 
 	<style>
-	  .password-overlay {
-		position: fixed;
-		inset: 0;
-		z-index: 9999;
-		background: black;
-		color: white;
-		display: grid;
-		place-items: center;
-		font-family: sans-serif;
-	  }
+		/* AÑADIMOS EL SCROLL SUAVE AQUÍ */
+		html {
+			scroll-behavior: smooth;
+		}
 
-	  .password-form {
-		background: #111;
-		padding: 2rem;
-		border-radius: 1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		min-width: 280px;
-		text-align: center;
-		transition: transform 0.3s ease;
-	  }
+		/* Estilos de la contraseña (sin cambios) */
+		.password-overlay {
+			position: fixed;
+			inset: 0;
+			z-index: 9999;
+			background: black;
+			color: white;
+			display: grid;
+			place-items: center;
+			font-family: sans-serif;
+		}
 
-	  .password-form input {
-		padding: 0.5rem;
-		font-size: 1rem;
-		border: none;
-		border-radius: 0.5rem;
-	  }
+		.password-form {
+			background: #111;
+			padding: 2rem;
+			border-radius: 1rem;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			min-width: 280px;
+			text-align: center;
+			transition: transform 0.3s ease;
+		}
 
-	  .password-form button {
-		background: rgb(50, 112, 0);
-		color: rgb(255, 255, 255);
-		font-weight: bold;
-		border: none;
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		cursor: pointer;
-		font-size: 1rem;
-		text-transform: uppercase;
-	  }
+		.password-form input {
+			padding: 0.5rem;
+			font-size: 1rem;
+			border: none;
+			border-radius: 0.5rem;
+		}
 
-	  .error-message {
-		color: red;
-		font-size: 0.9rem;
-		margin-top: -0.5rem;
-	  }
+		.password-form button {
+			background: rgb(50, 112, 0);
+			color: rgb(255, 255, 255);
+			font-weight: bold;
+			border: none;
+			padding: 0.5rem;
+			border-radius: 0.5rem;
+			cursor: pointer;
+			font-size: 1rem;
+			text-transform: uppercase;
+		}
 
-	  .shake {
-		animation: shake 0.4s ease-in-out;
-	  }
+		.error-message {
+			color: red;
+			font-size: 0.9rem;
+			margin-top: -0.5rem;
+		}
 
-	  @keyframes shake {
-		0% { transform: translateX(0); }
-		25% { transform: translateX(-5px); }
-		50% { transform: translateX(5px); }
-		75% { transform: translateX(-5px); }
-		100% { transform: translateX(0); }
-	  }
+		.shake {
+			animation: shake 0.4s ease-in-out;
+		}
+
+		@keyframes shake {
+			0% { transform: translateX(0); }
+			25% { transform: translateX(-5px); }
+			50% { transform: translateX(5px); }
+			75% { transform: translateX(-5px); }
+			100% { transform: translateX(0); }
+		}
 	</style>
-  </body>
+</body>
 </html>
