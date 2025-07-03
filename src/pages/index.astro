@@ -6,67 +6,173 @@ import "../styles/global.css";
 <html lang="es">
   <head>
 	<meta charset="UTF-8" />
-	<title>¡Prepárate! | 20D</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<script>
-	  document.addEventListener("DOMContentLoaded", () => {
-		const countdown = document.getElementById("countdown");
-		const weddingDate = new Date("2025-12-20T12:45:00+01:00").getTime();
-
-		const updateCountdown = () => {
-		  const now = new Date().getTime();
-		  const distance = weddingDate - now;
-
-		  if (distance < 0) {
-			countdown.innerText = "¡Ya ha llegado el gran día!";
-			return;
-		  }
-
-		  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-		  countdown.innerText = `${days} días ${hours}h ${minutes}m ${seconds}s`;
-		};
-
-		setInterval(updateCountdown, 1000);
-		updateCountdown();
-	  });
-	</script>
-	<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+	<meta name="robots" content="noindex, nofollow">
+	<title>20 de diciembre de 2025 — ¡Prepárate!</title>
   </head>
-
   <body>
-	<section class="hero">
-	  <video autoplay muted loop playsinline class="background-video base">
-		<source src="/matadero1.mp4" type="video/mp4" />
-	  </video>
-	  
-	  <video autoplay muted loop playsinline class="background-video fx">
-		<source src="/matadero1.mp4" type="video/mp4" />
-	  </video>
+	<div id="auth-wrapper">
+	  <div id="password-gate" class="password-overlay" style="display: none;">
+		<form class="password-form" id="loginForm">
+		  <h2>Introduce la contraseña</h2>
+		  <input type="password" placeholder="contraseña" id="passwordInput" />
+		  <button type="submit">Entrar</button>
+		  <p id="error-message" class="error-message"></p>
+		</form>
+	  </div>
 
-	  <div class="overlay">
-		<!-- <div class="efecto">
-			<h1>PREPÁRATE</h1>
-		</div>
-		<p>20 de diciembre de 2025 – Madrid</p>
-		Faltan <div id="countdown" class="countdown">Cargando...</div> -->
-		
-		<div class="animated-title">
-		  <div class="text-top">
-			<div>
-			  <span>PREPÁRATE</span>
-			  <span>20 de diciembre de 2025 – Madrid</span>
+	  <section class="hero" style="display: none;">
+		<video autoplay muted loop playsinline class="background-video base">
+		  <source src="/matadero1.mp4" type="video/mp4" />
+		</video>
+
+		<video autoplay muted loop playsinline class="background-video fx">
+		  <source src="/matadero1.mp4" type="video/mp4" />
+		</video>
+
+		<div class="overlay">
+		  <div class="animated-title">
+			<div class="text-top">
+			  <div>
+				<span>PREPÁRATE</span>
+				<span>20 de diciembre de 2025 – Madrid</span>
+			  </div>
+			</div>
+			<div class="text-bottom">
+			   <div id="countdown" class="countdown">Cargando...</div>
 			</div>
 		  </div>
-		  <div class="text-bottom">
-			<div id="countdown" class="countdown">Cargando...</div>
-		  </div>
 		</div>
-		
-	  </div>
-	</section>
+	  </section>
+	</div>
+
+	<script type="module">
+	  const HASH = "a712badfa7d1ad21dfd0ee8cf5499f9981e653429cd3e2f0a3a33e291096ad1b";
+	  const KEY = "wedding-auth";
+	  const loginForm = document.getElementById("loginForm");
+	  const passwordInput = document.getElementById("passwordInput");
+	  const gate = document.getElementById("password-gate");
+	  const hero = document.querySelector(".hero");
+	  const errorMessage = document.getElementById("error-message");
+
+	  const encoder = new TextEncoder();
+
+	  async function hashPassword(pwd) {
+		const data = encoder.encode(pwd);
+		const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+		const hashArray = Array.from(new Uint8Array(hashBuffer));
+		return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+	  }
+
+	  async function checkAccess() {
+		const stored = localStorage.getItem(KEY);
+		if (stored === HASH) {
+		  hero.style.display = "block";
+		} else {
+		  gate.style.display = "grid";
+		}
+	  }
+
+	  loginForm.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const input = passwordInput.value.trim();
+		const inputHash = await hashPassword(input);
+		if (inputHash === HASH) {
+		  localStorage.setItem(KEY, HASH);
+		  location.reload();
+		} else {
+		  errorMessage.textContent = "Contraseña incorrecta";
+		  loginForm.classList.add("shake");
+		  setTimeout(() => loginForm.classList.remove("shake"), 600);
+		}
+	  });
+
+	  checkAccess();
+
+	  // Cuenta atrás
+	  const targetDate = new Date("2025-12-20T12:45:00");
+	  const countdownEl = document.getElementById("countdown");
+
+	  function updateCountdown() {
+		const now = new Date();
+		const diff = targetDate - now;
+		if (diff <= 0) {
+		  countdownEl.innerText = "¡Ya es el día!";
+		  return;
+		}
+
+		const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+		const minutes = Math.floor((diff / (1000 * 60)) % 60);
+		const seconds = Math.floor((diff / 1000) % 60);
+
+		countdownEl.innerText = `Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+	  }
+
+	  setInterval(updateCountdown, 1000);
+	  updateCountdown();
+	</script>
+
+	<style>
+	  .password-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background: black;
+		color: white;
+		display: grid;
+		place-items: center;
+		font-family: sans-serif;
+	  }
+
+	  .password-form {
+		background: #111;
+		padding: 2rem;
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		min-width: 280px;
+		text-align: center;
+		transition: transform 0.3s ease;
+	  }
+
+	  .password-form input {
+		padding: 0.5rem;
+		font-size: 1rem;
+		border: none;
+		border-radius: 0.5rem;
+	  }
+
+	  .password-form button {
+		background: rgb(50, 112, 0);
+		color: rgb(255, 255, 255);
+		font-weight: bold;
+		border: none;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		font-size: 1rem;
+		text-transform: uppercase;
+	  }
+
+	  .error-message {
+		color: red;
+		font-size: 0.9rem;
+		margin-top: -0.5rem;
+	  }
+
+	  .shake {
+		animation: shake 0.4s ease-in-out;
+	  }
+
+	  @keyframes shake {
+		0% { transform: translateX(0); }
+		25% { transform: translateX(-5px); }
+		50% { transform: translateX(5px); }
+		75% { transform: translateX(-5px); }
+		100% { transform: translateX(0); }
+	  }
+	</style>
   </body>
 </html>

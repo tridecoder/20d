@@ -149,15 +149,16 @@ h1 {
   transform: translate(0, 100%);
 }
 .animated-title > div.text-top div span:first-child {
-  color: #def;
-  font-size: 8vmin;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff3939;
 }
 .animated-title > div.text-bottom {
   bottom: 0;
 }
 .animated-title > div.text-bottom div {
-  animation: showBottomText 0.5s;
-  animation-delay: 1.75s;
+  animation: showBottomText 0.75s;
+  animation-delay: 2.25s;
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
