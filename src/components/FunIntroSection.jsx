@@ -138,7 +138,7 @@ export default function FunIntroSection() {
                 <div className="bg-gradient-to-br from-yellow-400 via-pink-400 to-purple-500 p-1 rounded-2xl">
                   <div className="bg-white rounded-xl p-4">
                     <img
-                      src="/IMG_4467.png"
+                      src="/sebiko3.jpg"
                       alt="Sebas y Javi"
                       className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
                     />

@@ -69,8 +69,8 @@ export default function WhenWhereSection() {
                     </p>
                     <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
-                      arroz, confeti, petardos, cigarros o cualquier tipo de
-                      elemento.
+                      arroz, confeti, petardos, cigarros, gatos o cualquier tipo
+                      de elemento.
                     </p>
                   </div>
 
