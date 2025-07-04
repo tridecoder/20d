@@ -140,39 +140,51 @@ export default function WeddingRSVPForm() {
   };
 
   const handleSubmit = async () => {
-    console.log("🚀 Iniciando envío del formulario...");
+    console.log("🚀 Enviando formulario a Airtable...");
 
     try {
-      // Crear FormData exactamente como Netlify lo espera
-      const netlifyFormData = new FormData();
-      netlifyFormData.append("form-name", "wedding-rsvp");
-      netlifyFormData.append("name", formData.name || "");
-      netlifyFormData.append("email", formData.email || "");
-      netlifyFormData.append("attendance", formData.attendance || "");
-      netlifyFormData.append("companion", formData.companion || "");
-      netlifyFormData.append("companionName", formData.companionName || "");
-      netlifyFormData.append("allergies", formData.allergies || "");
-      netlifyFormData.append(
-        "dietaryRestrictions",
-        formData.dietaryRestrictions || ""
+      // Reemplaza estos valores con los tuyos de Airtable
+      const AIRTABLE_BASE_ID = "appnWpnysi5zAjHxd";
+      const AIRTABLE_TOKEN =
+        "patB9ihm15I47cMaM.f36701f827dcc8898c9b9056922a2ce2dc40434f9ce12694f4f985c47d331516"; // Empieza con 'pat...'
+      const AIRTABLE_TABLE_NAME = "tblL9ICRb0KusuijG"; // o tu Table ID
+
+      const response = await fetch(
+        `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            records: [
+              {
+                fields: {
+                  Name: formData.name,
+                  Email: formData.email,
+                  Attendance: formData.attendance === "yes" ? "Sí" : "No",
+                  Companion: formData.companion === "yes" ? "Sí" : "No",
+                  "Companion Name": formData.companionName || "",
+                  Allergies: formData.allergies || "",
+                  "Dietary Restrictions": formData.dietaryRestrictions || "",
+                  Song: formData.song || "",
+                  Comments: formData.comments || "",
+                  Submitted: new Date().toISOString().split("T")[0],
+                },
+              },
+            ],
+          }),
+        }
       );
-      netlifyFormData.append("song", formData.song || "");
-      netlifyFormData.append("comments", formData.comments || "");
-
-      console.log("📤 Enviando a Netlify...");
-
-      const response = await fetch("/", {
-        method: "POST",
-        body: netlifyFormData,
-      });
-
-      console.log("📨 Respuesta:", response.status);
 
       if (response.ok) {
-        console.log("✅ ¡Formulario enviado!");
+        console.log("✅ ¡Datos guardados en Airtable!");
         setIsSubmitted(true);
         nextStep();
       } else {
+        const errorData = await response.json();
+        console.error("Error de Airtable:", errorData);
         throw new Error(`Error ${response.status}`);
       }
     } catch (error) {
