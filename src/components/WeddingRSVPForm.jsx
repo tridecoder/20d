@@ -218,6 +218,7 @@ export default function WeddingRSVPForm() {
               venir o no (o si todavía no lo sabes). Nos ayudará a organizar la
               celebración.
             </p>
+            <p>SABEMOS QUE LAS FECHAS SON COMPLICADAS</p>
             <button
               onClick={nextStep}
               className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2"

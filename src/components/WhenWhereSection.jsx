@@ -69,7 +69,8 @@ export default function WhenWhereSection() {
                     </p>
                     <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
-                      arroz, confeti o cualquier tipo de elemento.
+                      arroz, confeti, petardos, cigarros o cualquier tipo de
+                      elemento.
                     </p>
                   </div>
 
@@ -198,8 +199,9 @@ export default function WhenWhereSection() {
                 🎯 Alternativa ceremonia
               </h4>
               <p className="text-gray-600">
-                Si la Casa del Reloj no está disponible, la ceremonia será en el
-                Invernadero (mismo complejo).
+                Si la Casa del Reloj no está disponible, suelen poner un belén
+                que ocupa el sitio donde se celebran las bodas, lo más probable
+                es que la ceremonia sea en el Invernadero (mismo complejo).
               </p>
             </div>
             <div className="space-y-2">
