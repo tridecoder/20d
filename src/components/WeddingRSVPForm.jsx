@@ -211,9 +211,9 @@ export default function WeddingRSVPForm() {
       case "welcome":
         return (
           <div className="text-center space-y-6">
-            <div className="text-6xl mb-4">💍</div>
+            <div className="text-6xl mb-4">👬</div>
             <p className="text-xl text-gray-600">
-              Tu confirmación nos ayuda a preparar el día perfecto
+              Tu confirmación nos ayuda a preparar la celebración
             </p>
             <button
               onClick={nextStep}
