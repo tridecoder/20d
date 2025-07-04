@@ -56,14 +56,10 @@ export default function WeddingRSVPForm() {
       subtitle: "Para preparar su tarjeta de mesa",
     },
     {
-      id: "allergies",
-      title: "¿Tienes alguna alergia alimentaria?",
-      subtitle: "Queremos que disfrutes de la comida sin preocupaciones",
-    },
-    {
-      id: "diet",
-      title: "¿Alguna restricción dietética?",
-      subtitle: "Vegetariano, vegano, sin gluten, etc.",
+      id: "dietary",
+      title: "¿Tienes alguna alergia o restricción dietética?",
+      subtitle:
+        "Vegetariano, vegano, sin gluten, alergias, etc. Queremos que disfrutes sin preocupaciones",
     },
     {
       id: "song",
@@ -90,15 +86,27 @@ export default function WeddingRSVPForm() {
   };
 
   const nextStep = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
+    // Encontrar el siguiente paso válido
+    for (let i = currentStep + 1; i < steps.length; i++) {
+      if (shouldShowStep(steps[i].id)) {
+        setCurrentStep(i);
+        return;
+      }
     }
+    // Si no hay más pasos válidos, ir al último
+    setCurrentStep(steps.length - 1);
   };
 
   const prevStep = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
+    // Encontrar el paso anterior válido
+    for (let i = currentStep - 1; i >= 0; i--) {
+      if (shouldShowStep(steps[i].id)) {
+        setCurrentStep(i);
+        return;
+      }
     }
+    // Si no hay pasos anteriores válidos, ir al primero
+    setCurrentStep(0);
   };
 
   const canProceed = () => {
@@ -129,10 +137,8 @@ export default function WeddingRSVPForm() {
     if (
       stepId === "companion" ||
       stepId === "companionName" ||
-      stepId === "allergies" ||
-      stepId === "diet" ||
-      stepId === "song" ||
-      stepId === "comments"
+      stepId === "dietary" ||
+      stepId === "song"
     ) {
       return formData.attendance === "yes";
     }
@@ -140,8 +146,6 @@ export default function WeddingRSVPForm() {
   };
 
   const handleSubmit = async () => {
-    console.log("🚀 Enviando formulario a Airtable...");
-
     try {
       // Reemplaza estos valores con los tuyos de Airtable
       const AIRTABLE_BASE_ID = "appnWpnysi5zAjHxd";
@@ -163,11 +167,15 @@ export default function WeddingRSVPForm() {
                 fields: {
                   Name: formData.name,
                   Email: formData.email,
-                  Attendance: formData.attendance === "yes" ? "Sí" : "No",
+                  Attendance:
+                    formData.attendance === "yes"
+                      ? "Sí"
+                      : formData.attendance === "maybe"
+                      ? "Todavía no lo sé"
+                      : "No",
                   Companion: formData.companion === "yes" ? "Sí" : "No",
                   "Companion Name": formData.companionName || "",
-                  Allergies: formData.allergies || "",
-                  "Dietary Restrictions": formData.dietaryRestrictions || "",
+                  "Dietary Info": formData.dietary || "",
                   Song: formData.song || "",
                   Comments: formData.comments || "",
                   Submitted: new Date().toISOString().split("T")[0],
@@ -179,16 +187,13 @@ export default function WeddingRSVPForm() {
       );
 
       if (response.ok) {
-        console.log("✅ ¡Datos guardados en Airtable!");
         setIsSubmitted(true);
         nextStep();
       } else {
         const errorData = await response.json();
-        console.error("Error de Airtable:", errorData);
         throw new Error(`Error ${response.status}`);
       }
     } catch (error) {
-      console.error("💥 Error:", error);
       alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
     }
   };
@@ -244,25 +249,41 @@ export default function WeddingRSVPForm() {
       case "attendance":
         return (
           <div className="space-y-4">
-            {["yes", "no"].map((option) => (
+            {[
+              {
+                value: "yes",
+                icon: Heart,
+                text: "¡Sí, estaré ahí!",
+                color: "rose",
+              },
+              {
+                value: "maybe",
+                icon: AlertCircle,
+                text: "Todavía no lo sé",
+                color: "amber",
+              },
+              {
+                value: "no",
+                icon: AlertCircle,
+                text: "No podré asistir",
+                color: "gray",
+              },
+            ].map((option) => (
               <button
-                key={option}
-                onClick={() => handleInputChange("attendance", option)}
+                key={option.value}
+                onClick={() => handleInputChange("attendance", option.value)}
                 className={`w-full p-4 text-left rounded-lg border-2 transition-colors ${
-                  formData.attendance === option
-                    ? "border-rose-500 bg-rose-50"
+                  formData.attendance === option.value
+                    ? `border-${option.color}-500 bg-${option.color}-50`
                     : "border-gray-200 hover:border-gray-300"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  {option === "yes" ? (
-                    <Heart className="text-rose-500" size={24} />
-                  ) : (
-                    <AlertCircle className="text-gray-400" size={24} />
-                  )}
-                  <span className="text-xl">
-                    {option === "yes" ? "¡Sí, estaré ahí!" : "No podré asistir"}
-                  </span>
+                  <option.icon
+                    className={`text-${option.color}-500`}
+                    size={24}
+                  />
+                  <span className="text-xl">{option.text}</span>
                 </div>
               </button>
             ))}
@@ -316,29 +337,13 @@ export default function WeddingRSVPForm() {
           </div>
         );
 
-      case "allergies":
+      case "dietary":
         return (
           <div className="space-y-4">
             <textarea
-              value={formData.allergies}
-              onChange={(e) => handleInputChange("allergies", e.target.value)}
-              placeholder="Déjalo en blanco si no tienes alergias"
-              className="w-full text-xl border-none outline-none bg-transparent border-b-2 border-gray-300 focus:border-rose-500 pb-2 resize-none"
-              rows="3"
-              autoFocus
-            />
-          </div>
-        );
-
-      case "diet":
-        return (
-          <div className="space-y-4">
-            <textarea
-              value={formData.dietaryRestrictions}
-              onChange={(e) =>
-                handleInputChange("dietaryRestrictions", e.target.value)
-              }
-              placeholder="Vegetariano, vegano, sin gluten, etc."
+              value={formData.dietary}
+              onChange={(e) => handleInputChange("dietary", e.target.value)}
+              placeholder="Déjalo en blanco si no tienes ninguna..."
               className="w-full text-xl border-none outline-none bg-transparent border-b-2 border-gray-300 focus:border-rose-500 pb-2 resize-none"
               rows="3"
               autoFocus
@@ -398,9 +403,41 @@ export default function WeddingRSVPForm() {
     }
   };
 
-  // Filtrar pasos que no se deben mostrar
-  const visibleSteps = steps.filter((step) => shouldShowStep(step.id));
-  const currentVisibleStep = visibleSteps.findIndex(
+  // Calcular pasos visibles y progreso real
+  const getVisibleSteps = () => {
+    let visible = [];
+    for (let i = 0; i <= currentStep; i++) {
+      if (shouldShowStep(steps[i].id)) {
+        visible.push(steps[i]);
+      }
+    }
+    // Añadir pasos futuros que sabemos que se mostrarán
+    for (let i = currentStep + 1; i < steps.length; i++) {
+      if (steps[i].id === "thanks") {
+        visible.push(steps[i]);
+        break;
+      }
+      if (
+        formData.attendance === "yes" &&
+        ["companion", "dietary", "song", "comments"].includes(steps[i].id)
+      ) {
+        visible.push(steps[i]);
+      }
+      if (formData.attendance === "maybe" && steps[i].id === "comments") {
+        visible.push(steps[i]);
+      }
+      if (formData.attendance === "no" && steps[i].id === "comments") {
+        visible.push(steps[i]);
+      }
+      if (formData.companion === "yes" && steps[i].id === "companionName") {
+        visible.push(steps[i]);
+      }
+    }
+    return visible;
+  };
+
+  const visibleSteps = getVisibleSteps();
+  const currentVisibleStepIndex = visibleSteps.findIndex(
     (step) => step.id === steps[currentStep].id
   );
 
@@ -411,11 +448,11 @@ export default function WeddingRSVPForm() {
         <div className="mb-8">
           <div className="flex justify-between text-sm text-gray-500 mb-2">
             <span>
-              Paso {currentVisibleStep + 1} de {visibleSteps.length}
+              Paso {currentVisibleStepIndex + 1} de {visibleSteps.length}
             </span>
             <span>
               {Math.round(
-                ((currentVisibleStep + 1) / visibleSteps.length) * 100
+                ((currentVisibleStepIndex + 1) / visibleSteps.length) * 100
               )}
               %
             </span>
@@ -425,7 +462,7 @@ export default function WeddingRSVPForm() {
               className="bg-rose-500 h-2 rounded-full transition-all duration-300"
               style={{
                 width: `${
-                  ((currentVisibleStep + 1) / visibleSteps.length) * 100
+                  ((currentVisibleStepIndex + 1) / visibleSteps.length) * 100
                 }%`,
               }}
             />
