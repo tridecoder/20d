@@ -89,11 +89,18 @@ import "../styles/global.css";
 				<h2>¿Vienes?</h2>
 				<p>Formulario de confirmación</p>
 <!-- Formulario oculto para Netlify -->
-				<form name="wedding-rsvp" data-netlify="true" netlify-honeypot="bot-field" hidden>
+				<form name="wedding-rsvp" method="POST" data-netlify="true" style="display: none;">
+				  <input type="hidden" name="form-name" value="wedding-rsvp" />
 				  <input type="text" name="name" />
 				  <input type="email" name="email" />
-				  <input type="text" name="attendance" />
-				  <input type="text" name="companion" />
+				  <select name="attendance">
+					<option value="yes">Sí</option>
+					<option value="no">No</option>
+				  </select>
+				  <select name="companion">
+					<option value="yes">Sí</option>
+					<option value="no">No</option>
+				  </select>
 				  <input type="text" name="companionName" />
 				  <textarea name="allergies"></textarea>
 				  <textarea name="dietaryRestrictions"></textarea>
