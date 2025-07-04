@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import Navigation from '../components/Navigation.astro';
+import WeddingRSVPForm from '../components/WeddingRSVPForm.jsx';
 import "../styles/global.css";
 ---
 
@@ -87,6 +88,19 @@ import "../styles/global.css";
 			<section id="rsvp" class="content-section">
 				<h2>¿Vienes?</h2>
 				<p>Formulario de confirmación</p>
+				<!-- Formulario oculto para Netlify -->
+				<form name="wedding-rsvp" netlify netlify-honeypot="bot-field" hidden>
+				  <input type="text" name="name" />
+				  <input type="email" name="email" />
+				  <input type="text" name="attendance" />
+				  <input type="text" name="companion" />
+				  <input type="text" name="companionName" />
+				  <textarea name="allergies"></textarea>
+				  <textarea name="dietaryRestrictions"></textarea>
+				  <input type="text" name="song" />
+				  <textarea name="comments"></textarea>
+				</form>
+				<WeddingRSVPForm client:load />
 			</section>
 		</main>
 	</div>
