@@ -86,7 +86,7 @@ export default function UsefulThingsSection() {
                   <p>Look artístico</p>
                 </div>
                 <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">👟</div>
+                  <div className="text-2xl mb-2">👕</div>
                   <p>Casual y cómodo</p>
                 </div>
                 <div className="bg-white rounded-lg p-3">
@@ -94,8 +94,8 @@ export default function UsefulThingsSection() {
                   <p>Algo original</p>
                 </div>
                 <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">🎨</div>
-                  <p>Colores locos</p>
+                  <div className="text-2xl mb-2">👟</div>
+                  <p>Chandalero</p>
                 </div>
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">✨</div>
