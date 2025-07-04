@@ -148,9 +148,10 @@ export default function WeddingRSVPForm() {
   const handleSubmit = async () => {
     try {
       // Reemplaza estos valores con los tuyos de Airtable
-      const AIRTABLE_BASE_ID = "TU_BASE_ID";
-      const AIRTABLE_TOKEN = "TU_PERSONAL_ACCESS_TOKEN"; // Empieza con 'pat...'
-      const AIRTABLE_TABLE_NAME = "Table%201"; // o tu Table ID
+      const AIRTABLE_BASE_ID = "appnWpnysi5zAjHxd";
+      const AIRTABLE_TOKEN =
+        "patB9ihm15I47cMaM.f36701f827dcc8898c9b9056922a2ce2dc40434f9ce12694f4f985c47d331516"; // Empieza con 'pat...'
+      const AIRTABLE_TABLE_NAME = "tblL9ICRb0KusuijG"; // o tu Table ID
 
       const response = await fetch(
         `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`,
