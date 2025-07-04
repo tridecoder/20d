@@ -161,7 +161,7 @@ export default function WeddingRSVPForm() {
       console.log("📤 Enviando datos:", formDataToSend);
 
       // Enviar a Netlify
-      const response = await fetch("/", {
+      const response = await fetch(window.location.pathname, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formDataToSend).toString(),
