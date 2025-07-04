@@ -141,50 +141,39 @@ export default function WeddingRSVPForm() {
 
   const handleSubmit = async () => {
     console.log("🚀 Iniciando envío del formulario...");
-    console.log("📋 Datos a enviar:", formData);
 
     try {
-      // Crear FormData para Netlify (no URLSearchParams)
-      const formDataToSend = new FormData();
-      formDataToSend.append("form-name", "wedding-rsvp");
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("attendance", formData.attendance);
-      formDataToSend.append("companion", formData.companion);
-      formDataToSend.append("companionName", formData.companionName);
-      formDataToSend.append("allergies", formData.allergies);
-      formDataToSend.append(
+      // Crear FormData exactamente como Netlify lo espera
+      const netlifyFormData = new FormData();
+      netlifyFormData.append("form-name", "wedding-rsvp");
+      netlifyFormData.append("name", formData.name || "");
+      netlifyFormData.append("email", formData.email || "");
+      netlifyFormData.append("attendance", formData.attendance || "");
+      netlifyFormData.append("companion", formData.companion || "");
+      netlifyFormData.append("companionName", formData.companionName || "");
+      netlifyFormData.append("allergies", formData.allergies || "");
+      netlifyFormData.append(
         "dietaryRestrictions",
-        formData.dietaryRestrictions
+        formData.dietaryRestrictions || ""
       );
-      formDataToSend.append("song", formData.song);
-      formDataToSend.append("comments", formData.comments);
+      netlifyFormData.append("song", formData.song || "");
+      netlifyFormData.append("comments", formData.comments || "");
 
-      console.log("📤 Enviando datos con FormData...");
+      console.log("📤 Enviando a Netlify...");
 
-      // Enviar a Netlify con FormData (sin Content-Type header)
       const response = await fetch("/", {
         method: "POST",
-        body: formDataToSend,
+        body: netlifyFormData,
       });
 
-      console.log(
-        "📨 Respuesta recibida:",
-        response.status,
-        response.statusText
-      );
+      console.log("📨 Respuesta:", response.status);
 
       if (response.ok) {
-        console.log("✅ Formulario enviado correctamente");
+        console.log("✅ ¡Formulario enviado!");
         setIsSubmitted(true);
         nextStep();
       } else {
-        console.error(
-          "❌ Error response:",
-          response.status,
-          response.statusText
-        );
-        alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+        throw new Error(`Error ${response.status}`);
       }
     } catch (error) {
       console.error("💥 Error:", error);
