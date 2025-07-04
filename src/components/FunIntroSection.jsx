@@ -97,7 +97,7 @@ export default function FunIntroSection() {
                     <span className="text-2xl font-bold">S</span>
                   </div>
                   <h4 className="text-xl font-bold">Sebas</h4>
-                  <p className="text-gray-300">El podcaster</p>
+                  <p className="text-gray-300 text-center">El podcaster</p>
                 </div>
 
                 <div className="text-center">
@@ -110,7 +110,7 @@ export default function FunIntroSection() {
                       {aliases[currentAlias]}
                     </span>
                   </h4>
-                  <p className="text-gray-300">El de mil nombres</p>
+                  <p className="text-gray-300 text-center">El de mil nombres</p>
                 </div>
               </div>
 

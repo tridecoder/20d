@@ -303,6 +303,9 @@ export default function UsefulThingsSection() {
                   <li>• La ceremonia dura 15 minutos</li>
                   <li>• Después vamos al lugar de celebración</li>
                   <li>• El cocktail empieza hacia las 13:30h</li>
+                  <li>
+                    • Cuando nos echen, seguiremos la fiesta por algún lado
+                  </li>
                 </ul>
               </div>
 

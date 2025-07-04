@@ -176,7 +176,7 @@ h1 {
   padding: 5rem 2rem;
   /* max-width: 800px; */
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
   color: #333;
   background-color: #ffffff;
 }
@@ -191,6 +191,7 @@ h1 {
   font-family: "Lato", serif; /* Sugerencia de una fuente elegante */
   font-weight: 900;
   color: #ff3939;
+  text-align: center;
 }
 
 .content-section p {
@@ -198,7 +199,7 @@ h1 {
   line-height: 1.2;
   font-family: "Lato", sans-serif;
   text-justify: initial;
-  text-align: left;
+
   max-width: 800px;
   margin: 0 auto 1rem auto;
 }
