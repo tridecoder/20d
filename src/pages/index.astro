@@ -2,6 +2,9 @@
 // src/pages/index.astro
 import Navigation from '../components/Navigation.astro';
 import WeddingRSVPForm from '../components/WeddingRSVPForm.jsx';
+import IBANComponent from '../components/IBANComponent.jsx';
+import WhenWhereSection from '../components/WhenWhereSection.jsx';
+import Info from '../components/Info.jsx';
 import "../styles/global.css";
 ---
 
@@ -71,18 +74,16 @@ import "../styles/global.css";
 			</section>
 
 			<section id="cuando" class="content-section alternate">
-				<h2>Cuándo y dónde</h2>
-				<p>La hora la sabemos, pero el punto exacto (Invernadero o Casa del Reloj), no.</p>
+				<WhenWhereSection client:load />
 			</section>
 
 			<section id="info" class="content-section">
-				<h2>Cosas útiles</h2>
-				<p>Aquí el dresscode y movidas varias de cómo moverse por los sitios</p>
+				<Info client:load />
 			</section>
 
 			<section id="regalo" class="content-section alternate">
 				<h2>Contribuye</h2>
-				<p>El número de cuenta</p>
+				<IBANComponent client:load />
 			</section>
 
 			<section id="asistencia" class="content-section">
