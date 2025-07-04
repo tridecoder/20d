@@ -47,13 +47,14 @@ export default function WeddingRSVPForm() {
     },
     {
       id: "companion",
-      title: "¿Vendrás acompañado/a?",
+      title: "¿Vendrás acompañado/a/e?",
       subtitle: "Queremos asegurarnos de tener sitio para todos",
     },
     {
       id: "companionName",
       title: "¿Cuál es el nombre de tu acompañante?",
-      subtitle: "Para preparar su tarjeta de mesa",
+      subtitle:
+        "Para saber cuántos vamos a ser. Si vienes con hijes, triejas o demás, pon el nombre de todos los que te vayan a acompañar.",
     },
     {
       id: "dietary",
