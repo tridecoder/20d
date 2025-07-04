@@ -18,9 +18,6 @@ export default function WhenWhereSection() {
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             ¿Cuándo y dónde?
           </h2>
-          <p className="text-xl text-gray-600">
-            Todo lo que necesitas saber sobre nuestra celebración
-          </p>
         </div>
 
         {/* Timeline */}

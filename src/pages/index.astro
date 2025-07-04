@@ -5,6 +5,7 @@ import WeddingRSVPForm from '../components/WeddingRSVPForm.jsx';
 import IBANComponent from '../components/IBANComponent.jsx';
 import WhenWhereSection from '../components/WhenWhereSection.jsx';
 import Info from '../components/Info.jsx';
+import FunIntroSection from '../components/FunIntroSection.jsx'; 
 import "../styles/global.css";
 ---
 
@@ -62,15 +63,7 @@ import "../styles/global.css";
 
 			<!-- NUEVAS SECCIONES DE LA PÁGINA -->
 			<section id="que" class="content-section">
-				<h2>¡Pero esto qué es!</h2>
-				<p>Has llegado hasta aquí. Eso es que tenías la contraseña de acceso, y en estos momentos te estarás preguntando de qué va esto.</p>
-				<p>Pues bien, además de saberte la contraseña, tienes que conocer a Sebas, a Javi (aka iko, Bitxu, Francis, Saralegui, etc.), o más probablemente a los dos.</p>
-				<p>Por si no lo recuerdas, te damos una pista...</p>
-				<p>Son éstos:</p>
-				<div class="imagen-entrada">
-					<img src="/sebiko2.png" alt="Sebiko en la cama" class="img-glass animada-esquina" />
-				  </div>
-				<p>Y te quieren invitar a su boda. Hace ya más de 25 años que se conocen, así que va siendo hora de que formalicen lo suyo.</p>
+				<FunIntroSection client:load />
 			</section>
 
 			<section id="cuando" class="content-section alternate">
@@ -88,7 +81,6 @@ import "../styles/global.css";
 
 			<section id="asistencia" class="content-section">
 				<h2>¿Vienes?</h2>
-				<p>Formulario de confirmación</p>
 <!-- Formulario oculto para Netlify -->
 				<form name="wedding-rsvp" method="POST" data-netlify="true" style="display: none;">
 				  <input type="hidden" name="form-name" value="wedding-rsvp" />
