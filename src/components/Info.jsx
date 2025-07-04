@@ -157,12 +157,7 @@ export default function UsefulThingsSection() {
                       Legazpi (L3, L6) + 5 min andando
                     </p>
                   </div>
-                  <div>
-                    <p className="font-medium">Hotel Urban:</p>
-                    <p className="text-gray-600">
-                      Sevilla (L2) + 2 min andando
-                    </p>
-                  </div>
+
                   <div className="bg-blue-50 rounded-lg p-3">
                     <p className="text-sm text-blue-800">
                       💡 <strong>Consejo:</strong> Es la opción más rápida y
@@ -189,12 +184,6 @@ export default function UsefulThingsSection() {
                       Zona azul y parkings públicos cercanos
                     </p>
                   </div>
-                  <div>
-                    <p className="font-medium">Parking Hotel Urban:</p>
-                    <p className="text-gray-600">
-                      Parking del hotel + públicos cercanos
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -203,14 +192,10 @@ export default function UsefulThingsSection() {
               <h4 className="font-bold text-gray-800 mb-3">
                 🚶 Entre localizaciones
               </h4>
-              <p className="text-gray-700 mb-3">
-                De Casa del Reloj al Hotel Urban: <strong>2.5 km</strong> (25-30
-                min andando, 10 min en metro/taxi)
-              </p>
+
               <p className="text-sm text-indigo-800">
-                💡 <strong>Sugerencia:</strong> Aprovecha para dar un paseo por
-                Madrid Río si hace buen tiempo, o usa el metro para llegar
-                rápido al hotel.
+                💡 Os pasaremos toda la información del lugar donde se hará la
+                celebración.
               </p>
             </div>
           </div>
@@ -316,7 +301,7 @@ export default function UsefulThingsSection() {
                 <ul className="space-y-2 text-gray-700">
                   <li>• Llega a las 12:30h (ceremonia a las 12:45h)</li>
                   <li>• La ceremonia dura 15 minutos</li>
-                  <li>• Después vamos directos al hotel</li>
+                  <li>• Después vamos al lugar de celebración</li>
                   <li>• El cocktail empieza hacia las 13:30h</li>
                 </ul>
               </div>
@@ -358,9 +343,9 @@ export default function UsefulThingsSection() {
 
             <div className="bg-red-50 border border-red-200 rounded-lg p-4">
               <p className="text-red-800 text-center">
-                <strong>🚫 Recordatorio:</strong> No lanzar arroz, confeti ni
-                pétalos en la Casa del Reloj (es un recinto municipal con
-                normativas estrictas)
+                <strong>🚫 Recordatorio:</strong> No lanzar arroz, confeti,
+                petardos, papeles, ni pétalos en la Casa del Reloj (es un
+                recinto municipal con normativas estrictas)
               </p>
             </div>
           </div>

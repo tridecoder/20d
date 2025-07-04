@@ -7,6 +7,7 @@ import {
   Heart,
   Utensils,
   Music,
+  HelpCircle,
 } from "lucide-react";
 
 export default function WhenWhereSection() {
@@ -139,13 +140,14 @@ export default function WhenWhereSection() {
                       </span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-amber-500 mt-1" />
+                      <HelpCircle className="w-5 h-5 text-amber-500 mt-1" />
                       <div>
-                        <p className="font-medium">Hotel Urban Madrid</p>
-                        <p className="text-gray-600">
-                          Carrera de San Jerónimo, 34
+                        <p className="font-medium text-amber-700">
+                          Ubicación por confirmar
                         </p>
-                        <p className="text-gray-600">28014 Madrid</p>
+                        <p className="text-gray-600">
+                          Os informaremos próximamente del lugar exacto
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -167,13 +169,11 @@ export default function WhenWhereSection() {
                     </div>
                   </div>
 
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <p>
-                      <strong>🚇 Metro:</strong> Sevilla (L2) - 2 min andando
-                    </p>
-                    <p>
-                      <strong>📍 Cerca de:</strong> Puerta del Sol, Gran Vía,
-                      Plaza Mayor
+                  <div className="bg-blue-50 rounded-lg p-3">
+                    <p className="text-sm text-blue-800">
+                      📍 <strong>¡Tranquilos!</strong> Será en el centro de
+                      Madrid y os daremos todos los detalles con tiempo
+                      suficiente.
                     </p>
                   </div>
                 </div>
@@ -183,31 +183,6 @@ export default function WhenWhereSection() {
               <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-amber-500 rounded-full border-4 border-white shadow-lg"></div>
 
               {/* Mapa Hotel Urban */}
-              <div className="md:w-1/2 md:pr-8">
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.7944815947445!2d-3.6986582!3d40.4146757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287b8e5b7c7f%3A0x5f7e8d9c4b3a2e1f!2sHotel%20Urban%20Madrid!5e0!3m2!1ses!2ses!4v1625678901235!5m2!1ses!2ses"
-                    width="100%"
-                    height="250"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Hotel Urban Madrid"
-                  ></iframe>
-                  <div className="p-4">
-                    <a
-                      href="https://maps.google.com/?q=Hotel+Urban+Madrid"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-amber-600 hover:text-amber-700 font-medium"
-                    >
-                      <Navigation className="w-4 h-4" />
-                      Cómo llegar
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
