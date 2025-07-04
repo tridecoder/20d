@@ -309,19 +309,16 @@ export default function UsefulThingsSection() {
               <div className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Phone className="w-6 h-6 text-green-500" />
-                  <h4 className="font-bold text-gray-800">
-                    Contacto emergencia
-                  </h4>
+                  <h4 className="font-bold text-gray-800">Contacto</h4>
                 </div>
                 <div className="space-y-2 text-gray-700">
                   <p>
-                    <strong>Novios:</strong> 666 777 888
+                    <strong>Novios:</strong>
                   </p>
+                  <p>639 663 657 </p>
+                  <p>699 271 366</p>
                   <p>
-                    <strong>Organizador:</strong> 666 999 111
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Solo para emergencias el día de la boda
+                    <a href="mailto:hola@20d.es">hola@20d.es</a>
                   </p>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import IBANComponent from '../components/IBANComponent.jsx';
 import WhenWhereSection from '../components/WhenWhereSection.jsx';
 import Info from '../components/Info.jsx';
 import FunIntroSection from '../components/FunIntroSection.jsx'; 
+import WeddingFooter from '../components/WeddingFooter.jsx';
 import "../styles/global.css";
 ---
 
@@ -101,6 +102,10 @@ import "../styles/global.css";
 				  <textarea name="comments"></textarea>
 				</form>
 				<WeddingRSVPForm client:load />
+			</section>
+			
+			<section id="pie" class="content-pie">
+				<WeddingFooter client:load />
 			</section>
 		</main>
 	</div>

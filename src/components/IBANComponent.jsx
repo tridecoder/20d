@@ -5,7 +5,7 @@ export default function IBANComponent() {
   const [copied, setCopied] = useState(false);
 
   // Reemplaza este IBAN por el tuyo real
-  const IBAN = "ES91 2100 0418 4502 0005 1332";
+  const IBAN = "ES43 0182 5322 2702 0726 1837";
 
   const copyToClipboard = async () => {
     try {
