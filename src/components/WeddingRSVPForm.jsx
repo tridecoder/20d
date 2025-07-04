@@ -214,7 +214,9 @@ export default function WeddingRSVPForm() {
           <div className="text-center space-y-6">
             <div className="text-6xl mb-4">👬</div>
             <p className="text-xl text-gray-600">
-              Tu confirmación nos ayuda a preparar la celebración
+              Por favor, rellena este sencillo cuestionario para saber si vas a
+              venir o no (o si todavía no lo sabes). Nos ayudará a organizar la
+              celebración.
             </p>
             <button
               onClick={nextStep}
