@@ -48,7 +48,7 @@ export default function WhenWhereSection() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-rose-500" />
-                      <span className="text-lg font-medium">12:45h</span>
+                      <span className="text-lg font-medium">12:15h</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-rose-500 mt-1" />
@@ -65,7 +65,7 @@ export default function WhenWhereSection() {
                   <div className="bg-rose-50 rounded-lg p-4 mb-4 space-y-2">
                     <p className="text-sm text-rose-800 font-medium">
                       ⏰ <strong>¡Importante!</strong> Llega antes de las
-                      12:30h. La ceremonia dura solo 15 minutos.
+                      12:00h. La ceremonia dura solo 10 minutos.
                     </p>
                     <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
