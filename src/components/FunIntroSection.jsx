@@ -97,7 +97,7 @@ export default function FunIntroSection() {
                     <span className="text-2xl font-bold">S</span>
                   </div>
                   <h4 className="text-xl font-bold">Sebas</h4>
-                  <p className="text-gray-300">El cerebrito ingeniero</p>
+                  <p className="text-gray-300">El podcaster</p>
                 </div>
 
                 <div className="text-center">
