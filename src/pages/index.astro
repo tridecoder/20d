@@ -88,8 +88,8 @@ import "../styles/global.css";
 			<section id="rsvp" class="content-section">
 				<h2>¿Vienes?</h2>
 				<p>Formulario de confirmación</p>
-				<!-- Este formulario debe estar en la misma página que el componente React -->
-				<form name="wedding-rsvp" netlify netlify-honeypot="bot-field" hidden>
+<!-- Formulario oculto para Netlify -->
+				<form name="wedding-rsvp" data-netlify="true" netlify-honeypot="bot-field" hidden>
 				  <input type="text" name="name" />
 				  <input type="email" name="email" />
 				  <input type="text" name="attendance" />

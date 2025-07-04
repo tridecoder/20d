@@ -144,27 +144,28 @@ export default function WeddingRSVPForm() {
     console.log("📋 Datos a enviar:", formData);
 
     try {
-      // Crear datos para Netlify en formato correcto
-      const formDataToSend = {
-        "form-name": "wedding-rsvp",
-        name: formData.name,
-        email: formData.email,
-        attendance: formData.attendance,
-        companion: formData.companion,
-        companionName: formData.companionName,
-        allergies: formData.allergies,
-        dietaryRestrictions: formData.dietaryRestrictions,
-        song: formData.song,
-        comments: formData.comments,
-      };
+      // Crear FormData para Netlify (no URLSearchParams)
+      const formDataToSend = new FormData();
+      formDataToSend.append("form-name", "wedding-rsvp");
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("attendance", formData.attendance);
+      formDataToSend.append("companion", formData.companion);
+      formDataToSend.append("companionName", formData.companionName);
+      formDataToSend.append("allergies", formData.allergies);
+      formDataToSend.append(
+        "dietaryRestrictions",
+        formData.dietaryRestrictions
+      );
+      formDataToSend.append("song", formData.song);
+      formDataToSend.append("comments", formData.comments);
 
-      console.log("📤 Enviando datos:", formDataToSend);
+      console.log("📤 Enviando datos con FormData...");
 
-      // Enviar a Netlify
-      const response = await fetch(window.location.pathname, {
+      // Enviar a Netlify con FormData (sin Content-Type header)
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formDataToSend).toString(),
+        body: formDataToSend,
       });
 
       console.log(
