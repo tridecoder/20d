@@ -41,13 +41,6 @@ export default function FunIntroSection() {
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         {/* Mystery Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 backdrop-blur-sm mb-6">
-            <Lock className="w-5 h-5 text-yellow-400" />
-            <span className="text-yellow-400 font-medium">
-              Acceso exclusivo detectado
-            </span>
-          </div>
-
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
             ¡Pero esto qué es!
           </h2>

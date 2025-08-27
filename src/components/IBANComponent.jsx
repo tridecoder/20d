@@ -4,7 +4,7 @@ import { Copy, Check, Gift } from "lucide-react";
 export default function IBANComponent() {
   const [copied, setCopied] = useState(false);
 
-  // Reemplaza este IBAN por el tuyo real
+  // Reemplaza este IBAN por el tuyo real. Cambiado.
   const IBAN = "ES43 0182 5322 2702 0726 1837";
 
   const copyToClipboard = async () => {
