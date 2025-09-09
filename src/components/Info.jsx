@@ -253,26 +253,6 @@ export default function UsefulThingsSection() {
                 </p>
               </div>
             </div>
-
-            <div className="bg-cyan-50 rounded-xl p-6">
-              <h4 className="font-bold text-gray-800 mb-3">
-                ❄️ Madrid en diciembre:
-              </h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-medium mb-1">En la ceremonia:</p>
-                  <p className="text-gray-700 text-sm">
-                    Puede hacer frío en el exterior
-                  </p>
-                </div>
-                <div>
-                  <p className="font-medium mb-1">En el hotel:</p>
-                  <p className="text-gray-700 text-sm">
-                    Ambiente climatizado y cálido
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         );
 
