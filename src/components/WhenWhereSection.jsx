@@ -246,19 +246,19 @@ export default function WhenWhereSection() {
                       <div className="flex items-center gap-2">
                         <Utensils className="w-4 h-4 text-amber-600" />
                         <span className="text-sm font-medium text-amber-800">
-                          Cocktail y aperitivos gourmet
+                          Cocktail
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Music className="w-4 h-4 text-amber-600" />
                         <span className="text-sm font-medium text-amber-800">
-                          Música
+                          Música y barra libre
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4 text-amber-600" />
                         <span className="text-sm font-medium text-amber-800">
-                          Ambiente exclusivo en pleno centro
+                          Decoración navideña por la Gran Vía
                         </span>
                       </div>
                     </div>
@@ -335,8 +335,7 @@ export default function WhenWhereSection() {
               <p className="text-gray-600">
                 <strong>Casa del Reloj:</strong> Zona azul y parkings públicos
                 <br />
-                <strong>Hyatt Centric:</strong> Parkings Gran Vía (€€), zona SER
-                (azul y verde)
+                <strong>Hyatt Centric:</strong> Parkings públicos
               </p>
             </div>
 
