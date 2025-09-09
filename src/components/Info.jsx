@@ -107,7 +107,7 @@ export default function UsefulThingsSection() {
             <div className="bg-green-50 border border-green-200 rounded-lg p-4">
               <p className="text-green-800 text-center">
                 <strong>💚 Resumen:</strong> No hay reglas. Solo ven como te
-                haga feliz y te sientas tú mismo/a.
+                haga feliz y te sientas tú mismo/a. De verdad.
               </p>
             </div>
           </div>
@@ -194,8 +194,14 @@ export default function UsefulThingsSection() {
               </h4>
 
               <p className="text-sm text-indigo-800">
-                💡 Os pasaremos toda la información del lugar donde se hará la
-                celebración.
+                💡 Cuando llega el frío las tiendas de Gran Vía y sus aceras se
+                llenan de gente, así que aunque no sea lo más glamuroso, lo más
+                rápido y práctico va a ser coger la línea 3 de metro en Legazpi
+                y bajarse en Callao.
+              </p>
+              <p className="text-sm text-indigo-800">
+                Nuestra carroza tirada por ponys, muy a nuestro pesar, la vamos
+                a dejar para otra ocasión.
               </p>
             </div>
           </div>
@@ -267,13 +273,6 @@ export default function UsefulThingsSection() {
                 </div>
               </div>
             </div>
-
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-blue-800 text-center">
-                <strong>❄️ Recuerda:</strong> ¡Es invierno en Madrid! Pero los
-                espacios están climatizados 🔥
-              </p>
-            </div>
           </div>
         );
 
@@ -300,9 +299,13 @@ export default function UsefulThingsSection() {
                 </div>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Llega a las 12:00h (ceremonia a las 12:15h)</li>
-                  <li>• La ceremonia dura 10 minutos</li>
+                  <li>
+                    • La ceremonia dura 10 minutos. Todavía no sabemos el aforo
+                    que nos van a dejar en la Casa del Reloj porque van a casar
+                    a las parejas en modo churrería.
+                  </li>
                   <li>• Después vamos al lugar de celebración</li>
-                  <li>• El cocktail empieza hacia las 14:00h</li>
+                  <li>• El cocktail empieza hacia las 13:30h</li>
                   <li>
                     • Cuando nos echen, seguiremos la fiesta por algún lado
                   </li>
@@ -345,7 +348,7 @@ export default function UsefulThingsSection() {
               <p className="text-red-800 text-center">
                 <strong>🚫 Recordatorio:</strong> No lanzar arroz, confeti,
                 petardos, papeles, ni pétalos en la Casa del Reloj (es un
-                recinto municipal con normativas estrictas)
+                recinto municipal con normativas estrictas).
               </p>
             </div>
           </div>

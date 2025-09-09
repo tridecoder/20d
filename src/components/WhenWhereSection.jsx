@@ -79,7 +79,8 @@ export default function WhenWhereSection() {
                     <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
                       arroz, confeti, petardos, cigarros, gatos o cualquier tipo
-                      de elemento.
+                      de elemento. CUMPLID ESTO ESTRICTAMENTE, QUE YA NOS
+                      CONOCEMOS TODAS.
                     </p>
                   </div>
 
@@ -165,8 +166,8 @@ export default function WhenWhereSection() {
                       <div className="flex items-center gap-2">
                         <Train className="w-4 h-4 text-blue-600" />
                         <span className="text-sm font-medium text-blue-800">
-                          <strong>Metro:</strong> Legazpi → Gran Vía (L3
-                          directa, 6 paradas)
+                          <strong>Metro:</strong> Legazpi → Callao (L3 directa,
+                          6 paradas)
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
@@ -198,12 +199,6 @@ export default function WhenWhereSection() {
                       <p className="text-sm font-medium">Hyatt Centric</p>
                       <p className="text-xs text-gray-500">Gran Vía</p>
                     </div>
-                  </div>
-                  <div className="bg-white/70 rounded-lg p-3">
-                    <p className="text-xs text-gray-600">
-                      💡 <strong>Tip:</strong> Podéis ir juntos en grupos o cada
-                      uno por su cuenta
-                    </p>
                   </div>
                 </div>
               </div>
@@ -257,7 +252,7 @@ export default function WhenWhereSection() {
                       <div className="flex items-center gap-2">
                         <Music className="w-4 h-4 text-amber-600" />
                         <span className="text-sm font-medium text-amber-800">
-                          Música en vivo y DJ
+                          Música
                         </span>
                       </div>
                       <div className="flex items-center gap-2">

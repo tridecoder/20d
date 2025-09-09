@@ -47,11 +47,11 @@ export default function FunIntroSection() {
 
           <div className="max-w-2xl mx-auto space-y-4 text-lg text-gray-200">
             <p className="animate-fade-in">
-              Has llegado hasta aquí. Eso significa que tenías la contraseña de
-              acceso...
+              Si has llegado hasta aquí es que ya te hemos comunicado que nos
+              casamos en unos días.
             </p>
             <p className="text-yellow-400 animate-pulse">
-              ¡Eres oficialmente parte del círculo exclusivo! 🔐
+              ¡Y queremos que celebres ese día con nostros!
             </p>
           </div>
         </div>
@@ -60,10 +60,6 @@ export default function FunIntroSection() {
         <div className="space-y-8">
           {/* Step 1: The question */}
           <div className="text-center">
-            <p className="text-xl text-gray-200 mb-6">
-              Y en estos momentos te estarás preguntando de qué va esto...
-            </p>
-
             {revealStep === 0 && (
               <button
                 onClick={handleRevealNext}
@@ -79,9 +75,7 @@ export default function FunIntroSection() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 animate-slide-up">
               <div className="text-center mb-6">
                 <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-4">
-                  Seguramente conoces a...
-                </h3>
+                <h3 className="text-2xl font-bold mb-4">Ya conoces a...</h3>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -124,7 +118,8 @@ export default function FunIntroSection() {
           {revealStep >= 2 && (
             <div className="text-center animate-slide-up">
               <p className="text-xl text-gray-200 mb-6">
-                Por si no los recuerdas, te damos una pista...
+                Pero como en algunos casos y por circunstancias de la vida no
+                nos vemos mucho, te damos una pista...
               </p>
 
               <div className="relative inline-block">
@@ -149,7 +144,7 @@ export default function FunIntroSection() {
                     onClick={handleRevealNext}
                     className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105"
                   >
-                    ¡Ahora sí los recuerdo! 💕
+                    ¡Ahora sí os recuerdo! 💕
                   </button>
                 </div>
               )}
@@ -162,7 +157,8 @@ export default function FunIntroSection() {
               <div className="bg-gradient-to-r from-pink-500 via-red-500 to-purple-600 rounded-2xl p-8 mb-8">
                 <Sparkles className="w-16 h-16 text-yellow-300 mx-auto mb-4 animate-spin" />
                 <h3 className="text-3xl font-bold mb-4">
-                  ¡Y te quieren invitar a su BODA!
+                  Y como te hemos comentado, ¡te invitamos a nuestras primeras
+                  nupcias!
                 </h3>
 
                 <div className="flex items-center justify-center gap-4 text-2xl mb-4">
@@ -170,11 +166,12 @@ export default function FunIntroSection() {
                   <div className="bg-white/20 rounded-lg px-4 py-2 font-mono font-bold">
                     {yearsCounter}
                   </div>
-                  <span>años que se conocen</span>
+                  <span>años que nos conocemos</span>
                 </div>
 
                 <p className="text-xl text-pink-100">
-                  Así que va siendo hora de que formalicen lo suyo...
+                  Así que va siendo hora de que formalicemos lo nuestro y dejar
+                  el pecado de un lado...
                 </p>
               </div>
 
