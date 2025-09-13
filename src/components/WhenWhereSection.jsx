@@ -72,9 +72,8 @@ export default function WhenWhereSection() {
                       ⏰ <strong>¡Importante!</strong> El espacio de la
                       ceremonia es muy reducido y todavía no sabemos el aforo
                       que nos van a permitir. Quien quiera acercarse, de todas
-                      formas, es bienvenido y de todas formas nos vemos luego en
-                      el lugar de celebración, para los que quieran ir
-                      directamente allí.
+                      formas, es bienvenido. Y los que lo prefieran, pueden ir
+                      directamente al lugar de celebración.
                     </p>
                     <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
@@ -324,9 +323,10 @@ export default function WhenWhereSection() {
                 🎯 Plan B ceremonia
               </h4>
               <p className="text-gray-600 mb-4">
-                Si la Casa del Reloj no está disponible (suelen poner un belén
-                que ocupa el sitio), la ceremonia será en el Invernadero del
-                mismo complejo.
+                Si la Casa del Reloj no está disponible (suelen poner un Belén
+                gigante que ocupa toda la sala de celebraciones), la ceremonia
+                será en el Invernadero del mismo complejo. Ojalá, porque el
+                sitio es más bonito.
               </p>
 
               <h4 className="font-semibold text-gray-700 mb-3">

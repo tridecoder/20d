@@ -65,41 +65,97 @@ export default function UsefulThingsSection() {
             </div>
 
             <div className="bg-purple-50 rounded-xl p-6 text-center">
-              <h4 className="font-bold text-gray-800 mb-3">
-                Algunas ideas divertidas:
-              </h4>
+              <h4 className="font-bold text-gray-800 mb-3">Algunas ideas:</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">🤵</div>
                   <p>Súper elegante</p>
-                </div>
-                <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">👗</div>
-                  <p>Vestido de gala</p>
-                </div>
-                <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">🎪</div>
-                  <p>Look vintage</p>
-                </div>
-                <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">🎭</div>
-                  <p>Look artístico</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-gala.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">👕</div>
                   <p>Casual y cómodo</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-casual.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg p-3">
+                  <div className="text-2xl mb-2">🎪</div>
+                  <p>Look vintage</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-vintage.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="bg-white rounded-lg p-3">
-                  <div className="text-2xl mb-2">🦄</div>
-                  <p>Algo original</p>
+                  <div className="text-2xl mb-2">🎭</div>
+                  <p>Look artístico</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-artistico.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg p-3">
+                  <div className="text-2xl mb-2">💃</div>
+                  <p>Flamenca/o</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-flamenco.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">👟</div>
                   <p>Chandalero</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-chandal.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-3">
+                  <div className="text-2xl mb-2">👰</div>
+                  <p>Attention whore</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-boda.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">✨</div>
                   <p>¡Como quieras!</p>
+                  <div className="bg-white rounded-xl p-4">
+                    <img
+                      src="/p-prision.png"
+                      alt="Sebas y Javi"
+                      className="max-w-full h-auto rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
