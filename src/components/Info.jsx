@@ -66,7 +66,7 @@ export default function UsefulThingsSection() {
 
             <div className="bg-purple-50 rounded-xl p-6 text-center">
               <h4 className="font-bold text-gray-800 mb-3">Algunas ideas:</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
                 <div className="bg-white rounded-lg p-3">
                   <div className="text-2xl mb-2">🤵</div>
                   <p>Súper elegante</p>

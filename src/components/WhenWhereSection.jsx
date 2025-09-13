@@ -152,7 +152,7 @@ export default function WhenWhereSection() {
                     <div className="flex items-start gap-3">
                       <Navigation className="w-5 h-5 text-blue-500 mt-1" />
                       <div>
-                        <p className="font-medium">Casa del Reloj → Gran Vía</p>
+                        <p className="font-medium">Casa del Reloj → Callao</p>
                         <p className="text-gray-600">
                           15-20 minutos en transporte público
                         </p>
