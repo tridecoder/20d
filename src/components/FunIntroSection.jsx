@@ -169,7 +169,7 @@ export default function FunIntroSection() {
 
                 <p className="text-xl text-pink-100">
                   Así que va siendo hora de que formalicemos lo nuestro y dejar
-                  el pecado de un lado...
+                  el pecado a un lado...
                 </p>
               </div>
 

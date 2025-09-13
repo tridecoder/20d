@@ -239,6 +239,12 @@ export default function UsefulThingsSection() {
                     <p className="text-gray-600">
                       Zona azul y parkings públicos cercanos
                     </p>
+                    <p className="font-medium">Parking Hyatt Centric:</p>
+                    <p className="text-gray-600">
+                      Hay varios parkings públicos en el centro cercanos. Son
+                      caros y no sabemos si habrá sitio. Recomendamos el metro o
+                      taxi/uber.
+                    </p>
                   </div>
                 </div>
               </div>
