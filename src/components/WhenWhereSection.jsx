@@ -58,7 +58,9 @@ export default function WhenWhereSection() {
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-rose-500 mt-1" />
                       <div>
-                        <p className="font-medium">Casa del Reloj</p>
+                        <p className="font-medium">
+                          Auditorio de Nuevas Dependencias
+                        </p>
                         <p className="text-gray-600">Paseo de la Chopera, 6</p>
                         <p className="text-gray-600">
                           28045 Madrid (Arganzuela)
@@ -69,17 +71,22 @@ export default function WhenWhereSection() {
 
                   <div className="bg-rose-50 rounded-lg p-4 mb-4 space-y-2">
                     <p className="text-sm text-rose-800 font-medium">
-                      ⏰ <strong>¡Importante!</strong> El espacio de la
-                      ceremonia es muy reducido y todavía no sabemos el aforo
-                      que nos van a permitir. Quien quiera acercarse, de todas
-                      formas, es bienvenido. Y los que lo prefieran, pueden ir
-                      directamente al lugar de celebración.
-                    </p>
-                    <p className="text-sm text-rose-800 font-medium">
                       🚫 <strong>Recinto municipal:</strong> Prohibido lanzar
                       arroz, confeti, petardos, cigarros, gatos o cualquier tipo
                       de elemento. CUMPLID ESTO ESTRICTAMENTE, QUE YA NOS
                       CONOCEMOS TODAS.
+                    </p>
+                    <p className="text-sm text-rose-800 font-medium">
+                      ⏰ <strong>¡Importante!</strong> El espacio de la
+                      ceremonia es reducido, pero cabemos todos. Quien quiera
+                      acercarse, es bienvenido. Y los que lo prefieran, pueden
+                      ir directamente al lugar de celebración.
+                    </p>
+                    <p className="text-sm text-rose-800 font-medium">
+                      🚫{" "}
+                      <strong>
+                        Repetimos. ¡NO TIRÉIS NADA QUE HAY MULTA GORDA!
+                      </strong>
                     </p>
                   </div>
 
@@ -103,18 +110,18 @@ export default function WhenWhereSection() {
               <div className="md:w-1/2 md:pl-8">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.6674827094595!2d-3.7010746!3d40.3930729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227e1f5b7c7cb%3A0x7b8c9f4e5d2a3b6c!2sCasa%20del%20Reloj!5e0!3m2!1ses!2ses!4v1625678901234!5m2!1ses!2ses"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d379.90067929300017!2d-3.700447999999989!3d40.39443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42279f53409521%3A0xcd405399fae21d93!2sAuditorio%20Nuevas%20Dependencias%20Casa%20del%20Reloj!5e0!3m2!1ses!2ses!4v1764767551465!5m2!1ses!2ses"
                     width="100%"
                     height="250"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Casa del Reloj"
+                    title="Auditorio Nuevas Dependencias - Casa del Reloj"
                   ></iframe>
                   <div className="p-4">
                     <a
-                      href="https://maps.google.com/?q=Casa+del+Reloj+Madrid"
+                      href="https://maps.google.com/?q=Auditorio+Nuevas+Dependencias+Paseo+de+la+Chopera+6+Madrid"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-rose-600 hover:text-rose-700 font-medium"
@@ -152,7 +159,9 @@ export default function WhenWhereSection() {
                     <div className="flex items-start gap-3">
                       <Navigation className="w-5 h-5 text-blue-500 mt-1" />
                       <div>
-                        <p className="font-medium">Casa del Reloj → Callao</p>
+                        <p className="font-medium">
+                          Auditorio Nuevas Dependencias → Callao
+                        </p>
                         <p className="text-gray-600">
                           15-20 minutos en transporte público
                         </p>
@@ -189,7 +198,9 @@ export default function WhenWhereSection() {
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <div className="text-center">
                       <MapPin className="w-8 h-8 text-rose-500 mx-auto mb-2" />
-                      <p className="text-sm font-medium">Casa del Reloj</p>
+                      <p className="text-sm font-medium">
+                        Auditorio de Nuevas Dependencias
+                      </p>
                       <p className="text-xs text-gray-500">Arganzuela</p>
                     </div>
                     <ArrowRight className="w-6 h-6 text-gray-400" />
@@ -323,10 +334,9 @@ export default function WhenWhereSection() {
                 🎯 Plan B ceremonia
               </h4>
               <p className="text-gray-600 mb-4">
-                Si la Casa del Reloj no está disponible (suelen poner un Belén
-                gigante que ocupa toda la sala de celebraciones), la ceremonia
-                será en el Invernadero del mismo complejo. Ojalá, porque el
-                sitio es más bonito.
+                En la Casa del Reloj está el Belén, así que{" "}
+                <b>el enlace es en el Auditorio de Nuevas Dependencias</b> del
+                mismo recinto.
               </p>
 
               <h4 className="font-semibold text-gray-700 mb-3">
@@ -345,7 +355,8 @@ export default function WhenWhereSection() {
               </h4>
               <div className="space-y-2 text-gray-600">
                 <p>
-                  <strong>12:00h</strong> - Llegada Casa del Reloj
+                  <strong>12:00h</strong> - Llegada al Auditorio Nuevas
+                  Dependencias
                 </p>
                 <p>
                   <strong>12:15h</strong> - Ceremonia (10 min)
