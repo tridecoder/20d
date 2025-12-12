@@ -331,7 +331,7 @@ export default function WhenWhereSection() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h4 className="font-semibold text-gray-700 mb-3">
-                🎯 Plan B ceremonia
+                🎯 La ceremonia
               </h4>
               <p className="text-gray-600 mb-4">
                 En la Casa del Reloj está el Belén, así que{" "}
