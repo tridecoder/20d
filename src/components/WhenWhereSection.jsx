@@ -14,6 +14,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
+import WeatherWidget from "./WeatherWidget.jsx";
 
 export default function WhenWhereSection() {
   return (
@@ -380,6 +381,9 @@ export default function WhenWhereSection() {
             </div>
           </div>
         </div>
+
+        {/* Widget del tiempo */}
+        <WeatherWidget />
       </div>
     </section>
   );
