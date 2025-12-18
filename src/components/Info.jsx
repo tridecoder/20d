@@ -349,7 +349,9 @@ export default function UsefulThingsSection() {
                   <li>• Después vamos al lugar de celebración</li>
                   <li>• El cocktail empieza hacia las 13:30h</li>
                   <li>
-                    • Cuando nos echen, seguiremos la fiesta por algún lado
+                    • Cuando nos echen, seguiremos la fiesta en{" "}
+                    <strong>Ciriaco Brown</strong>, que está en calle de los
+                    Abades, 13
                   </li>
                 </ul>
               </div>

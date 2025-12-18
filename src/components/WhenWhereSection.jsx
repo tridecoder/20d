@@ -363,19 +363,39 @@ export default function WhenWhereSection() {
                   <strong>12:15h</strong> - Ceremonia (10 min)
                 </p>
                 <p>
-                  <strong>13:00</strong> - Traslado al hotel
+                  <strong>13:00h</strong> - Traslado al hotel
                 </p>
                 <p>
                   <strong>13:30h</strong> - Inicio cocktail en Hyatt
                 </p>
                 <p>
-                  <strong>20:00h</strong> - Fin oficial (pero quien sabe...)
+                  <strong>20:00h</strong> - Fin oficial (pero la fiesta sigue
+                  para los que quieran)
                 </p>
               </div>
 
               <div className="bg-purple-50 rounded-lg p-3 mt-4">
                 <p className="text-sm text-purple-800">
-                  🍾 <strong>After party:</strong> Que ya nos conocemos.
+                  <strong>20:30h </strong> 🍾🍾{" "}
+                  <strong>After party: Ciriaco Brown </strong> 🍾🍾
+                </p>
+                <p className="text-sm">
+                  {" "}
+                  <a
+                    href="https://maps.app.goo.gl/Eacfh3VDH4dRYtPy8"
+                    target="_blank"
+                  >
+                    Calle de los Abades, 13
+                  </a>
+                </p>
+                <p className="text-sm">
+                  Iremos dando un paseo de 15 minutos por el centro de Madrid.
+                  Así nos da un poco el fresquito y nos despejamos.
+                </p>
+                <p className="text-sm">
+                  Quien tenga imposibilidad de caminar debido al atuendo que ha
+                  seleccionado y requiera de taxi para llegar, que nos lo
+                  comunique.
                 </p>
               </div>
             </div>
