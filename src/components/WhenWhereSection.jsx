@@ -244,7 +244,7 @@ export default function WhenWhereSection() {
                           Hyatt Centric Gran Vía Madrid
                         </p>
                         <p className="text-gray-600">
-                          Espacio "Hielo y Carbón"
+                          Espacio "Hielo y Carbón" - 1ª planta
                         </p>
                         <p className="text-gray-600">Gran Vía, 31</p>
                         <p className="text-gray-600">28013 Madrid (Centro)</p>
